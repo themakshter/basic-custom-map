@@ -11,10 +11,13 @@
     "url": "git+https://github.com/pcs4kids/basic-custom-map.git"
   },
   "keywords": [],
-  "author": "Mohammad Ali Khan mohammad_ali93@live.com",
+  "author": "Mohammad Ali Khan <mohammad_ali93@live.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/pcs4kids/basic-custom-map/issues"
   },
-  "homepage": "https://github.com/pcs4kids/basic-custom-map#readme"
+  "homepage": "https://github.com/pcs4kids/basic-custom-map#readme",
+  "devDependencies": {
+    "typescript": "2.7.2"
+  }
 }
