@@ -1,5 +1,5 @@
-import Position from "./Position";
-import Dimensions from "./Dimensions";
+import Position from "./position";
+import Dimensions from "./dimensions";
 
 export default interface CanvasComponent {
   position: Position;
