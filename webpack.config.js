@@ -15,10 +15,10 @@ module.exports = {
     extensions: [ '.tsx', '.ts', '.js' ]
   },
   output: {
-    filename: '[name].js',
+    filename: 'basic-custom-map.js',
     path: path.resolve(__dirname, 'dist'),
     libraryTarget: 'umd',
-    library: 'randomTest',
+    library: 'basicCustomMap',
     umdNamedDefine: true,
   },
   mode: 'production'
