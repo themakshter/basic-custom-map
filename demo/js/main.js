@@ -13,39 +13,48 @@ var mapToLoadSchema = {
 };
 
 var exampleMapToLoad = {
-  name: 'Fun Island',
-  background: 'water.jpg',
-  overlay: 'island.png',
-  activities:[
+  title: 'Fun Island',
+  imageSource: 'img/map.jpg',
+  pins:[
       {
           name: 'Freaky Forest',
-          image: 'forest.png',
-          x: 175,
-          y: 200
+          imageSource: 'img/forest.png',
+          position: {
+            x: 175,
+            y: 200
+          }
       },
       {
           name: 'Mourny Mountain',
-          image: 'mountain.png',
-          x: 500,
-          y: 450
+          imageSource: 'img/mountain.png',
+          position: {
+            x: 500,
+            y: 450
+          }
       },
       {
           name: 'Raging River',
-          image: 'river.png',
-          x: 300,
-          y: 100
+          imageSource: 'img/river.png',
+          position: {
+            x: 300,
+            y: 100
+          }
       },
       {
           name: 'Creepy Castle',
-          image: 'castle.svg',
-          x: 500,
-          y: 250
+          imageSource: 'img/castle.svg',
+          position: {
+            x: 500,
+            y: 250
+          }
       },
       {
           name: 'X Marks the Spot',
-          image: 'x-mark.png',
-          x: 350,
-          y: 300
+          imageSource: 'img/x-mark.png',
+          position: {
+            x: 350,
+            y: 300
+          }
       }
   ]
 }
