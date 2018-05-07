@@ -15,7 +15,7 @@ module.exports = {
     extensions: [ '.tsx', '.ts', '.js' ]
   },
   output: {
-    filename: 'basic-custom-map.js',
+    filename: 'basic-custom-map.min.js',
     path: path.resolve(__dirname, 'dist'),
     libraryTarget: 'umd',
     library: 'basicCustomMap',
