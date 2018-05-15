@@ -18,17 +18,14 @@ export default class MapCanvasComponent implements CanvasComponent {
       let mapTitle: TextCanvasComponent = new TextCanvasComponent(this.title, this.ctx, textPosition, this.dimensions);
       mapImage.draw().then( () => {
         mapTitle.draw();
+        for(let pin of this.pins){
+          let pinSize: number = this.dimensions.width * 0.075;
+          let pinDimensions: Dimensions = { width: pinSize, height: pinSize};
+          let mapPin = new MapPinCanvasComponent(pin.name, pin.imageSource, this.ctx, pin.position, pinDimensions);
+          mapPin.draw();
+        }
       });
-      mapTitle.draw();
-      for(let pin of this.pins){
-        let pinSize: number = this.dimensions.width * 0.075;
-        let pinDimensions: Dimensions = { width: pinSize, height: pinSize};
-        let mapPin = new MapPinCanvasComponent(pin.name, pin.imageSource, this.ctx, pin.position, pinDimensions);
-        mapPin.draw();
-      }
       resolve();
     });
   }
-
-
 }
