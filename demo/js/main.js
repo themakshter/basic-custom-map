@@ -14,46 +14,46 @@ var mapToLoadSchema = {
 
 var exampleMapToLoad = {
   title: 'Fun Island',
-  imageSource: 'img/map.jpg',
+  imageSource: 'img/map.png',
   pins:[
       {
-          name: 'Freaky Forest',
-          imageSource: 'img/forest.png',
+          name: 'Giddy Giraffe',
+          imageSource: 'img/animal-giraffe.png',
           position: {
-            x: 175,
+            x: 180,
             y: 200
           }
       },
       {
-          name: 'Mourny Mountain',
-          imageSource: 'img/mountain.png',
+          name: 'Mischievous Monkey',
+          imageSource: 'img/animal-monkey.png',
           position: {
             x: 500,
-            y: 450
+            y: 350
           }
       },
       {
-          name: 'Raging River',
-          imageSource: 'img/river.png',
+          name: 'Crafty Cheetah',
+          imageSource: 'img/animal-cheetah.png',
           position: {
             x: 300,
-            y: 100
+            y: 75
           }
       },
       {
-          name: 'Creepy Castle',
-          imageSource: 'img/castle.svg',
+          name: 'Pristine Panther',
+          imageSource: 'img/animal-panther.png',
           position: {
             x: 500,
-            y: 250
+            y: 110
           }
       },
       {
-          name: 'X Marks the Spot',
-          imageSource: 'img/x-mark.png',
+          name: 'Baddie Bear',
+          imageSource: 'img/animal-bear.png',
           position: {
             x: 350,
-            y: 300
+            y: 275
           }
       }
   ]
