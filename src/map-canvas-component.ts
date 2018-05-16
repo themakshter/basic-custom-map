@@ -4,6 +4,7 @@ import TextCanvasComponent from "./text-canvas-component"
 import CanvasComponent from "./canvas-component";
 import Position from "./position";
 import Dimensions from "./dimensions";
+import Utils from "./utils";
 
 export default class MapCanvasComponent implements CanvasComponent {
 
@@ -12,19 +13,20 @@ export default class MapCanvasComponent implements CanvasComponent {
   draw() : Promise<void> {
     return new Promise<void>( (resolve: ()=> any, reject: ()=> any) => {
       let mapImage: ImageCanvasComponent = new ImageCanvasComponent(this.imageSource, this.ctx, this.position, this.dimensions);
-      let textX: number = this.position.x + (this.dimensions.width * 0.40);
-      let textY: number = this.position.y + (this.dimensions.height * 0.075);
-      let textPosition: Position = { x: textX, y: textY};
-      let mapTitleFontSize: number = this.dimensions.height * 0.075;
-      let mapTitle: TextCanvasComponent = new TextCanvasComponent(this.title, this.ctx, textPosition, this.dimensions, mapTitleFontSize);
+      let titleFontSize: number = this.dimensions.height * 0.075;
+      let titleTextWidth: number = Utils.getTextWidthBasedOnFontSize(this.ctx, this.title, titleFontSize);
+      let titleX: number = this.position.x + Utils.getPointForCenteringOnWidth(titleTextWidth, this.dimensions.width);
+      let titleY: number = this.position.y + (this.dimensions.height * 0.075);
+      let titlePosition: Position = { x: titleX, y: titleY};
+      let mapTitle: TextCanvasComponent = new TextCanvasComponent(this.title, this.ctx, titlePosition, this.dimensions, titleFontSize);
       mapImage.draw().then( () => {
-        mapTitle.draw();
         for(let pin of this.pins){
           let pinSize: number = this.dimensions.width * 0.075;
           let pinDimensions: Dimensions = { width: pinSize, height: pinSize};
           let mapPin = new MapPinCanvasComponent(pin.name, pin.imageSource, this.ctx, pin.position, pinDimensions);
           mapPin.draw();
         }
+        mapTitle.draw();
       });
       resolve();
     });
