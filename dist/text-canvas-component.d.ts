@@ -6,6 +6,7 @@ export default class TextCanvasComponent implements CanvasComponent {
     ctx: CanvasRenderingContext2D;
     position: Position;
     dimensions: Dimensions;
-    constructor(text: string, ctx: CanvasRenderingContext2D, position: Position, dimensions: Dimensions);
+    fontSize: number;
+    constructor(text: string, ctx: CanvasRenderingContext2D, position: Position, dimensions: Dimensions, fontSize?: number);
     draw(): Promise<void>;
 }

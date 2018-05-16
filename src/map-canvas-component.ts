@@ -15,7 +15,8 @@ export default class MapCanvasComponent implements CanvasComponent {
       let textX: number = this.position.x + (this.dimensions.width * 0.40);
       let textY: number = this.position.y + (this.dimensions.height * 0.075);
       let textPosition: Position = { x: textX, y: textY};
-      let mapTitle: TextCanvasComponent = new TextCanvasComponent(this.title, this.ctx, textPosition, this.dimensions);
+      let mapTitleFontSize: number = this.dimensions.height * 0.075;
+      let mapTitle: TextCanvasComponent = new TextCanvasComponent(this.title, this.ctx, textPosition, this.dimensions, mapTitleFontSize);
       mapImage.draw().then( () => {
         mapTitle.draw();
         for(let pin of this.pins){
