@@ -14,6 +14,10 @@ module.exports = {
   resolve: {
     extensions: [ '.tsx', '.ts', '.js' ]
   },
+  devtool: 'source-map',
+  externals: {
+    snapsvg: 'Snap'
+  },
   output: {
     filename: 'basic-custom-map.min.js',
     path: path.resolve(__dirname, 'dist'),
