@@ -1,8 +1,8 @@
 import Position from "./position";
 import Dimensions from "./dimensions";
 
-export default interface CanvasComponent {
-  ctx: CanvasRenderingContext2D;
+export default interface SvgComponent {
+  snapCtx: Snap.Paper;
   position: Position;
   dimensions: Dimensions;
   draw(): Promise<void>;

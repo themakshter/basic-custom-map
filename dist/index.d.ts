@@ -1,1 +1,1 @@
-export declare function createMap(canvasId: string, map: any): void;
+export declare function createMap(svgId: string, map: any): void;

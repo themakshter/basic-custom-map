@@ -1,13 +1,17 @@
-import MapCanvasComponent from "./map-canvas-component";
+import MapSvgComponent from "./map-svg-component";
 import Position from "./position";
 import Dimensions from "./dimensions";
 
-export function createMap (canvasId: string, map: any)  {
-  let canvas : HTMLCanvasElement = <HTMLCanvasElement> document.getElementById(canvasId);
-  let ctx: CanvasRenderingContext2D = <CanvasRenderingContext2D> canvas.getContext('2d');
-  let mapDimensions: Dimensions = { width: canvas.width, height: canvas.height };
+import Snap = require("snapsvg");
+
+export function createMap (svgId: string, map: any)  {
+  let snapCtx : Snap.Paper = Snap('#' + svgId);
+  let svgElement : SVGSVGElement | any = document.getElementById(svgId);
+  let mapWidth: number = svgElement.width.baseVal.valueInSpecifiedUnits
+  let mapHeight: number = svgElement.height.baseVal.valueInSpecifiedUnits
+  let mapDimensions = { width: mapWidth, height: mapHeight};
   let mapPosition: Position = { x: 0, y: 0 };
-  let canvasMap: MapCanvasComponent = new MapCanvasComponent(map.title, map.imageSource, map.pins, ctx, mapPosition, mapDimensions);
+  let canvasMap: MapSvgComponent = new MapSvgComponent(map.title, map.imageSource, map.pins, snapCtx, mapPosition, mapDimensions);
   canvasMap.draw().then( () => {
     console.log("finito!");
   });
