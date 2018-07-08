@@ -5,10 +5,11 @@ import SvgComponent from "./svg-component";
 import Position from "./position";
 import Dimensions from "./dimensions";
 import Utils from "./utils";
+import RectangleDimensions from "./rectangle-dimensions";
 
 export default class MapSvgComponent implements SvgComponent {
 
-  constructor(private title: string, private imageSource: string, private pins: Array<any>, public snapCtx: Snap.Paper, public position: Position, public dimensions: Dimensions){}
+  constructor(private title: string, private imageSource: string, private pins: Array<any>, public snapCtx: Snap.Paper, public position: Position, public dimensions: RectangleDimensions){}
 
   draw() : Promise<void> {
     return new Promise<void>( (resolve: ()=> any, reject: ()=> any) => {
@@ -22,7 +23,7 @@ export default class MapSvgComponent implements SvgComponent {
       mapImage.draw().then( () => {
         for(let pin of this.pins){
           let pinSize: number = this.dimensions.width * 0.075;
-          let pinDimensions: Dimensions = { width: pinSize, height: pinSize};
+          let pinDimensions: RectangleDimensions = new RectangleDimensions(pinSize, pinSize);
           let mapPin = new MapPinSvgComponent(pin.name, pin.imageSource, this.snapCtx, pin.position, pinDimensions);
           mapPin.draw();
         }

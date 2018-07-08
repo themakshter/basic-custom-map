@@ -1,10 +1,10 @@
 import SvgComponent from "./svg-component";
 import Position from "./position";
-import Dimensions from "./dimensions";
+import RectangleDimensions from "./rectangle-dimensions";
 
 export default class ImageSvgComponent implements SvgComponent{
 
-  constructor(private imageSource: string, public snapCtx: Snap.Paper, public position: Position, public dimensions: Dimensions){}
+  constructor(private imageSource: string, public snapCtx: Snap.Paper, public position: Position, public dimensions: RectangleDimensions){}
 
   draw() : Promise<void> {
     return new Promise<void>( (resolve: any, reject: any) => {
