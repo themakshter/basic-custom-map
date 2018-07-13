@@ -18,6 +18,7 @@ var exampleMapToLoad = {
   pins:[
       {
           name: 'Giddy Giraffe',
+          description: 'Come along for a great ride with our main G!',
           imageSource: 'img/animal-giraffe.png',
           position: {
             x: 180,
@@ -26,6 +27,7 @@ var exampleMapToLoad = {
       },
       {
           name: 'Mischievous Monkey',
+          description: 'Watch out before he steals your wallet!',
           imageSource: 'img/animal-monkey.png',
           position: {
             x: 500,
@@ -34,6 +36,7 @@ var exampleMapToLoad = {
       },
       {
           name: 'Crafty Cheetah',
+          description: 'Once a Cheetah, always a Cheetah!',
           imageSource: 'img/animal-cheetah.png',
           position: {
             x: 300,
@@ -42,6 +45,7 @@ var exampleMapToLoad = {
       },
       {
           name: 'Pristine Panther',
+          description: 'He\'s got nothing on our boy Pink Panther!',
           imageSource: 'img/animal-panther.png',
           position: {
             x: 500,
@@ -50,6 +54,7 @@ var exampleMapToLoad = {
       },
       {
           name: 'Baddie Bear',
+          description: 'Big Bad Bear waits for nobody!',
           imageSource: 'img/animal-bear.png',
           position: {
             x: 350,

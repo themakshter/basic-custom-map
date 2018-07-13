@@ -7,5 +7,6 @@ export default class CircleSvgComponent implements SvgComponent {
     position: Position;
     dimensions: CircleDimensions;
     constructor(snapCtx: Snap.Paper, position: Position, dimensions: CircleDimensions);
+    element: Snap.Element;
     draw(): Promise<void>;
 }

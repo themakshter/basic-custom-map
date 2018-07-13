@@ -4,10 +4,12 @@ import Position from "./position";
 import RectangleDimensions from "./rectangle-dimensions";
 import CircleSvgComponent from "./circle-svg-component";
 import CircleDimensions from "./circle-dimensions";
+import MapPinCardSvgComponent from "./map-pin-card-svg-component";
+import MapPinDetails from "./map-pin-details";
 
 export default class MapPinSvgComponent implements SvgComponent {
 
-  constructor(private name:string, private imageSource: string, public snapCtx: Snap.Paper, public position: Position, public dimensions: RectangleDimensions){}
+  constructor(private name:string, private description: string, private imageSource: string, public snapCtx: Snap.Paper, public position: Position, public dimensions: RectangleDimensions){}
 
   draw() {
     return new Promise<void>( (resolve: ()=> any, reject: ()=> any) => {
@@ -17,8 +19,17 @@ export default class MapPinSvgComponent implements SvgComponent {
       let circleY: number = this.position.y + (this.dimensions.height * 1.10) + circleSize;
       let circlePosition: Position = { x: circleX, y: circleY};
       let circleForPin : CircleSvgComponent = new CircleSvgComponent(this.snapCtx, circlePosition, new CircleDimensions(circleSize));
+      let mapPinDetails: MapPinDetails = {title: this.name, description: this.description };
+      let mapPinCardDimensions = new RectangleDimensions(this.dimensions.width * 3, this.dimensions.height * 1.5);
+      let nameCard: MapPinCardSvgComponent = new MapPinCardSvgComponent(mapPinDetails, this.snapCtx, circlePosition, mapPinCardDimensions);
       pinImage.draw().then( () => {
         circleForPin.draw();
+        nameCard.draw();
+        circleForPin.element.hover(hoverInHandler => {
+          nameCard.show();
+        }, hoverOutHandler => {
+          nameCard.hide();
+        });
       });
       resolve();
     });
