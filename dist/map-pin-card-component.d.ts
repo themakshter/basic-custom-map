@@ -2,13 +2,13 @@
 import SvgComponent from "./svg-component";
 import Position from "./position";
 import RectangleDimensions from "./rectangle-dimensions";
-export default class MapPinSvgComponent implements SvgComponent {
-    private name;
-    private description;
-    private imageSource;
+import MapPinDetails from "./map-pin-details";
+import Snap = require("snapsvg");
+export default class MapPinCardComponent implements SvgComponent {
+    private details;
     snapCtx: Snap.Paper;
     position: Position;
     dimensions: RectangleDimensions;
-    constructor(name: string, description: string, imageSource: string, snapCtx: Snap.Paper, position: Position, dimensions: RectangleDimensions);
+    constructor(details: MapPinDetails, snapCtx: Snap.Paper, position: Position, dimensions: RectangleDimensions);
     draw(): Promise<void>;
 }
