@@ -1,10 +1,10 @@
-import SvgComponent from "./svg-component";
-import Position from "./position";
-import CircleDimensions from "./circle-dimensions";
-import ColourAttributes from "./colour-attributes";
-import Utils from "./utils";
+import { SvgComponent } from "./svg-component";
+import { Position } from "./position";
+import { CircleDimensions } from "./circle-dimensions";
+import { ColourAttributes } from "./colour-attributes";
+import { setColourAttributeForSnapElement } from "./utils";
 
-export default class CircleSvgComponent implements SvgComponent{
+export class CircleSvgComponent implements SvgComponent{
 
   constructor(public snapCtx: Snap.Paper, public position: Position, public dimensions: CircleDimensions){}
   element!: Snap.Element
@@ -19,7 +19,7 @@ export default class CircleSvgComponent implements SvgComponent{
         strokeColour: '#e6dab3',
         strokeSize: 3
       };
-      Utils.setColourAttributeForSnapElement(this.element, circleColourAttributes);
+      setColourAttributeForSnapElement(this.element, circleColourAttributes);
 
       resolve();
     });

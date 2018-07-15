@@ -1,12 +1,12 @@
 import Snap = require("snapsvg");
-import SvgComponent from "./svg-component";
-import Position from "./position";
-import RectangleDimensions from "./rectangle-dimensions";
-import MapPinDetails from "./map-pin-details";
-import ColourAttributes from "./colour-attributes";
-import Utils from "./utils";
+import { SvgComponent } from "./svg-component";
+import { Position } from "./position";
+import { RectangleDimensions } from "./rectangle-dimensions";
+import { MapPinDetails } from "./map-pin-details";
+import { ColourAttributes } from "./colour-attributes";
+import { setColourAttributeForSnapElement } from "./utils";
 
-export default class MapPinCardSvgComponent implements SvgComponent {
+export class MapPinCardSvgComponent implements SvgComponent {
 
   constructor(private details: MapPinDetails, public snapCtx: Snap.Paper, public position: Position, public dimensions: RectangleDimensions){}
   groupedElement!: Snap.Paper
@@ -27,7 +27,7 @@ export default class MapPinCardSvgComponent implements SvgComponent {
       strokeColour: 'black',
       strokeSize: 1
     };
-    Utils.setColourAttributeForSnapElement(container, containerColourAttributes);
+    setColourAttributeForSnapElement(container, containerColourAttributes);
     return container;
   }
 
@@ -40,7 +40,7 @@ export default class MapPinCardSvgComponent implements SvgComponent {
   getDimensionsForForeignObject(): RectangleDimensions {
     let cardWidth: number = this.dimensions.width * 0.95;
     let cardHeight: number = this.dimensions.height * 0.95;
-    return new RectangleDimensions(cardWidth, cardHeight);
+    return { width: cardWidth, height: cardHeight};
   }
 
   getForeignObjectHtmlForCard(details: MapPinDetails ,dimensions: RectangleDimensions, position: Position): string {

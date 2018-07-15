@@ -1,4 +1,4 @@
-export default interface MapPinDetails {
+export interface MapPinDetails {
   title: string;
   description: string;
 }

@@ -1,4 +1,4 @@
-export default interface MapComponentToDraw{
+export interface MapComponentToDraw{
   name: string;
   imageSource: string;
 }

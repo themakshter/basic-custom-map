@@ -1,7 +1,7 @@
-import Position from "./position";
-import Dimensions from "./dimensions";
+import { Position } from "./position";
+import { Dimensions } from "./dimensions";
 
-export default interface SvgComponent {
+export interface SvgComponent {
   snapCtx: Snap.Paper;
   position: Position;
   dimensions: Dimensions;

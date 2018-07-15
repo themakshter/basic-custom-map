@@ -1,3 +1,2 @@
-export default interface Dimensions {
-  getDimensions(): any
+export interface Dimensions {
 }

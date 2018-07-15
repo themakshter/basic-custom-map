@@ -1,8 +1,8 @@
-import SvgComponent from "./svg-component";
-import Position from "./position";
-import RectangleDimensions from "./rectangle-dimensions";
+import { SvgComponent } from "./svg-component";
+import { Position } from "./position";
+import { RectangleDimensions } from "./rectangle-dimensions";
 
-export default class ImageSvgComponent implements SvgComponent{
+export class ImageSvgComponent implements SvgComponent{
 
   constructor(private imageSource: string, public snapCtx: Snap.Paper, public position: Position, public dimensions: RectangleDimensions){}
 
