@@ -2,13 +2,13 @@
 import SvgComponent from "./svg-component";
 import Position from "./position";
 import RectangleDimensions from "./rectangle-dimensions";
+import Map from "./map";
 export default class MapSvgComponent implements SvgComponent {
-    private title;
-    private imageSource;
-    private pins;
+    private map;
     snapCtx: Snap.Paper;
     position: Position;
     dimensions: RectangleDimensions;
-    constructor(title: string, imageSource: string, pins: Array<any>, snapCtx: Snap.Paper, position: Position, dimensions: RectangleDimensions);
+    constructor(map: Map, snapCtx: Snap.Paper, position: Position, dimensions: RectangleDimensions);
     draw(): Promise<void>;
+    drawMapPins(mapPins: Array<any>): void;
 }

@@ -13,7 +13,7 @@ var mapToLoadSchema = {
 };
 
 var descriptionFunction = function(name){
-  alert(name + "called");
+  alert(name + " called");
 
 }
 

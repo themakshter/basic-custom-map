@@ -1,34 +1,30 @@
 import MapPinSvgComponent from "./map-pin-svg-component";
 import ImageSvgComponent from "./image-svg-component";
-import TextSvgComponent from "./text-svg-component";
 import SvgComponent from "./svg-component";
 import Position from "./position";
-import Dimensions from "./dimensions";
-import Utils from "./utils";
 import RectangleDimensions from "./rectangle-dimensions";
+import Map from "./map";
 
 export default class MapSvgComponent implements SvgComponent {
 
-  constructor(private title: string, private imageSource: string, private pins: Array<any>, public snapCtx: Snap.Paper, public position: Position, public dimensions: RectangleDimensions){}
+  constructor(private map: Map, public snapCtx: Snap.Paper, public position: Position, public dimensions: RectangleDimensions){}
 
   draw() : Promise<void> {
     return new Promise<void>( (resolve: ()=> any, reject: ()=> any) => {
-      let mapImage: ImageSvgComponent = new ImageSvgComponent(this.imageSource, this.snapCtx, this.position, this.dimensions);
-      let titleFontSize: number = this.dimensions.height * 0.075;
-      let titleX: number = this.position.x - this.dimensions.width/2;
-      let titleY: number = this.position.y + (this.dimensions.height * 0.075);
-      let titlePosition: Position = { x: titleX, y: titleY};
-      let mapTitle: TextSvgComponent = new TextSvgComponent(this.title, this.snapCtx, titlePosition, this.dimensions, titleFontSize);
+      let mapImage: ImageSvgComponent = new ImageSvgComponent(this.map.imageSource, this.snapCtx, this.position, this.dimensions);
       mapImage.draw().then( () => {
-        for(let pin of this.pins){
-          let pinSize: number = this.dimensions.width * 0.075;
-          let pinDimensions: RectangleDimensions = new RectangleDimensions(pinSize, pinSize);
-          let mapPin = new MapPinSvgComponent(pin.name, pin.description, pin.imageSource, this.snapCtx, pin.position, pinDimensions, pin.callbackFunction);
-          mapPin.draw();
-        }
-        mapTitle.draw();
+        this.drawMapPins(this.map.pins);
       });
       resolve();
     });
+  }
+
+  drawMapPins(mapPins: Array<any>): void {
+    for(let pin of mapPins){
+      let pinSize: number = this.dimensions.width * 0.075;
+      let pinDimensions: RectangleDimensions = new RectangleDimensions(pinSize, pinSize);
+      let mapPin = new MapPinSvgComponent(pin, this.snapCtx, pin.position, pinDimensions);
+      mapPin.draw();
+    }
   }
 }

@@ -12,6 +12,11 @@ export default class MapPinCardSvgComponent implements SvgComponent {
     constructor(details: MapPinDetails, snapCtx: Snap.Paper, position: Position, dimensions: RectangleDimensions);
     groupedElement: Snap.Paper;
     draw(): Promise<void>;
+    getContainerForCard(): Snap.Fragment;
+    getForeignObjectForCard(): Snap.Fragment;
+    getDimensionsForForeignObject(): RectangleDimensions;
+    getForeignObjectHtmlForCard(details: MapPinDetails, dimensions: RectangleDimensions, position: Position): string;
     hide(): void;
     show(): void;
+    makeElementVisible(visible: boolean): void;
 }
