@@ -9,6 +9,7 @@ export default class MapPinSvgComponent implements SvgComponent {
     snapCtx: Snap.Paper;
     position: Position;
     dimensions: RectangleDimensions;
-    constructor(name: string, description: string, imageSource: string, snapCtx: Snap.Paper, position: Position, dimensions: RectangleDimensions);
+    private clickCallback;
+    constructor(name: string, description: string, imageSource: string, snapCtx: Snap.Paper, position: Position, dimensions: RectangleDimensions, clickCallback: (parameter: any) => void);
     draw(): Promise<void>;
 }
