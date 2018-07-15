@@ -9,7 +9,7 @@ import MapPinDetails from "./map-pin-details";
 
 export default class MapPinSvgComponent implements SvgComponent {
 
-  constructor(private name:string, private description: string, private imageSource: string, public snapCtx: Snap.Paper, public position: Position, public dimensions: RectangleDimensions){}
+  constructor(private name:string, private description: string, private imageSource: string, public snapCtx: Snap.Paper, public position: Position, public dimensions: RectangleDimensions, private clickCallback: (parameter : any) => void){}
 
   draw() {
     return new Promise<void>( (resolve: ()=> any, reject: ()=> any) => {
@@ -29,6 +29,9 @@ export default class MapPinSvgComponent implements SvgComponent {
           nameCard.show();
         }, hoverOutHandler => {
           nameCard.hide();
+        });
+        circleForPin.element.click(() => {
+          this.clickCallback(this.name);
         });
       });
       resolve();

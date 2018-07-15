@@ -12,6 +12,11 @@ var mapToLoadSchema = {
   ]
 };
 
+var descriptionFunction = function(name){
+  alert(name + "called");
+
+}
+
 var exampleMapToLoad = {
   title: 'Fun Island',
   imageSource: 'img/map.png',
@@ -23,7 +28,8 @@ var exampleMapToLoad = {
           position: {
             x: 180,
             y: 200
-          }
+          },
+          callbackFunction : descriptionFunction
       },
       {
           name: 'Mischievous Monkey',
@@ -32,7 +38,8 @@ var exampleMapToLoad = {
           position: {
             x: 500,
             y: 350
-          }
+          },
+          callbackFunction : descriptionFunction
       },
       {
           name: 'Crafty Cheetah',
@@ -41,7 +48,8 @@ var exampleMapToLoad = {
           position: {
             x: 300,
             y: 75
-          }
+          },
+          callbackFunction : descriptionFunction
       },
       {
           name: 'Pristine Panther',
@@ -50,7 +58,8 @@ var exampleMapToLoad = {
           position: {
             x: 500,
             y: 110
-          }
+          },
+          callbackFunction : descriptionFunction
       },
       {
           name: 'Baddie Bear',
@@ -59,7 +68,8 @@ var exampleMapToLoad = {
           position: {
             x: 350,
             y: 275
-          }
+          },
+          callbackFunction : descriptionFunction
       }
   ]
 }

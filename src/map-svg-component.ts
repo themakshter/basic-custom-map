@@ -23,7 +23,7 @@ export default class MapSvgComponent implements SvgComponent {
         for(let pin of this.pins){
           let pinSize: number = this.dimensions.width * 0.075;
           let pinDimensions: RectangleDimensions = new RectangleDimensions(pinSize, pinSize);
-          let mapPin = new MapPinSvgComponent(pin.name, pin.description, pin.imageSource, this.snapCtx, pin.position, pinDimensions);
+          let mapPin = new MapPinSvgComponent(pin.name, pin.description, pin.imageSource, this.snapCtx, pin.position, pinDimensions, pin.callbackFunction);
           mapPin.draw();
         }
         mapTitle.draw();
