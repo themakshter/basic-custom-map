@@ -1,4 +1,5 @@
+/// <reference types="snapsvg" />
+import ColourAttributes from "./colour-attributes";
 export default class Utils {
-    static getPointForCenteringOnWidth(widthToUse: number, widthToBaseOn: number): number;
-    static getTextWidthBasedOnFontSize(ctx: CanvasRenderingContext2D, textToMeasure: string, fontSize?: number): number;
+    static setColourAttributeForSnapElement(snapElement: Snap.Element, colourAttributes: ColourAttributes): void;
 }

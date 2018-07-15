@@ -2,14 +2,23 @@
 import SvgComponent from "./svg-component";
 import Position from "./position";
 import RectangleDimensions from "./rectangle-dimensions";
+import CircleSvgComponent from "./circle-svg-component";
+import CircleDimensions from "./circle-dimensions";
+import MapPinCardSvgComponent from "./map-pin-card-svg-component";
+import MapPin from "./map-pin";
 export default class MapPinSvgComponent implements SvgComponent {
-    private name;
-    private description;
-    private imageSource;
+    private mapPin;
     snapCtx: Snap.Paper;
     position: Position;
     dimensions: RectangleDimensions;
-    private clickCallback;
-    constructor(name: string, description: string, imageSource: string, snapCtx: Snap.Paper, position: Position, dimensions: RectangleDimensions, clickCallback: (parameter: any) => void);
+    constructor(mapPin: MapPin, snapCtx: Snap.Paper, position: Position, dimensions: RectangleDimensions);
     draw(): Promise<void>;
+    getCircleComponentForPin(): CircleSvgComponent;
+    getCircleDimensions(pinDimensions: RectangleDimensions): CircleDimensions;
+    getCircleRadius(pinDimensions: RectangleDimensions): number;
+    getCirclePosition(pinDimensions: RectangleDimensions, pinPosition: Position): Position;
+    getMapPinCardComponent(): MapPinCardSvgComponent;
+    getMapPinCardDimensions(pinDimensions: RectangleDimensions): RectangleDimensions;
+    addBehaviourToShowMapPinCardOnCircleHover(pinCircle: CircleSvgComponent, pinCard: MapPinCardSvgComponent): void;
+    addBehaviourToExecuteCallbackOnCircleClick(pinCircle: CircleSvgComponent): void;
 }
