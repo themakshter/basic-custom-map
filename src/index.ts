@@ -1,6 +1,6 @@
-import MapSvgComponent from "./map-svg-component";
-import Position from "./position";
-import RectangleDimensions from "./rectangle-dimensions";
+import { MapSvgComponent } from "./map-svg-component";
+import { Position } from "./position";
+import { RectangleDimensions } from "./rectangle-dimensions";
 
 import Snap = require("snapsvg");
 
@@ -18,5 +18,5 @@ function getSvgDimensions(svgElementId: string) : RectangleDimensions{
   let svgElement : SVGSVGElement | any = document.getElementById(svgElementId);
   let mapWidth: number = svgElement.width.baseVal.valueInSpecifiedUnits
   let mapHeight: number = svgElement.height.baseVal.valueInSpecifiedUnits
-  return new RectangleDimensions(mapWidth, mapHeight);
+  return { width: mapWidth, height: mapHeight};
 }

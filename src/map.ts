@@ -1,6 +1,6 @@
-import MapPin from "./map-pin";
-import MapComponentToDraw from "./map-component-to-draw";
+import { MapPin } from "./map-pin";
+import { MapComponentToDraw } from "./map-component-to-draw";
 
-export default interface Map extends MapComponentToDraw{
+export interface Map extends MapComponentToDraw{
   pins: Array<MapPin>;
 }

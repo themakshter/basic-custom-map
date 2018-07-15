@@ -1,9 +1,9 @@
 /// <reference types="snapsvg" />
-import SvgComponent from "./svg-component";
-import Position from "./position";
-import RectangleDimensions from "./rectangle-dimensions";
-import Map from "./map";
-export default class MapSvgComponent implements SvgComponent {
+import { SvgComponent } from "./svg-component";
+import { Position } from "./position";
+import { RectangleDimensions } from "./rectangle-dimensions";
+import { Map } from "./map";
+export declare class MapSvgComponent implements SvgComponent {
     private map;
     snapCtx: Snap.Paper;
     position: Position;

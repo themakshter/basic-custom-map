@@ -1,14 +1,14 @@
-import ImageSvgComponent from "./image-svg-component"
-import SvgComponent from "./svg-component";
-import Position from "./position";
-import RectangleDimensions from "./rectangle-dimensions";
-import CircleSvgComponent from "./circle-svg-component";
-import CircleDimensions from "./circle-dimensions";
-import MapPinCardSvgComponent from "./map-pin-card-svg-component";
-import MapPinDetails from "./map-pin-details";
-import MapPin from "./map-pin";
+import { ImageSvgComponent } from "./image-svg-component"
+import { SvgComponent } from "./svg-component";
+import { Position } from "./position";
+import { RectangleDimensions } from "./rectangle-dimensions";
+import { CircleSvgComponent } from "./circle-svg-component";
+import { CircleDimensions } from "./circle-dimensions";
+import { MapPinCardSvgComponent } from "./map-pin-card-svg-component";
+import { MapPinDetails } from "./map-pin-details";
+import { MapPin } from "./map-pin";
 
-export default class MapPinSvgComponent implements SvgComponent {
+export class MapPinSvgComponent implements SvgComponent {
 
   constructor(private mapPin: MapPin, public snapCtx: Snap.Paper, public position: Position, public dimensions: RectangleDimensions){}
 
@@ -35,7 +35,7 @@ export default class MapPinSvgComponent implements SvgComponent {
 
   getCircleDimensions(pinDimensions: RectangleDimensions): CircleDimensions {
     let circleRadius: number = this.getCircleRadius(pinDimensions);
-    return new CircleDimensions(circleRadius);
+    return { radius: circleRadius};
   }
 
   getCircleRadius(pinDimensions: RectangleDimensions): number {
@@ -59,7 +59,7 @@ export default class MapPinSvgComponent implements SvgComponent {
   getMapPinCardDimensions(pinDimensions: RectangleDimensions): RectangleDimensions {
     let mapPinCardWidth = pinDimensions.width * 3;
     let mapPinCardHeight = pinDimensions.height * 1.5;
-    return new RectangleDimensions(mapPinCardWidth, mapPinCardHeight);
+    return { width: mapPinCardWidth, height: mapPinCardHeight };
   }
 
   addBehaviourToShowMapPinCardOnCircleHover(pinCircle: CircleSvgComponent, pinCard: MapPinCardSvgComponent): void {
