@@ -1,15 +1,56 @@
 <!doctype html>
 <html>
-  <head>
-    <title>Basic Custom Map demo</title>
-    <link href="./css/style.css" rel="stylesheet">
-  </head>
-  <body>
 
-      <h1>Infinity Map PCs4Kids</h1>
-      <svg id="map-svg" width="750"; height="500" style="border:1px solid black"></svg>
+<head>
+  <title>Basic Custom Map demo</title>
+  <link href="./lib/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
+</head>
 
-    <script src="./../dist/basic-custom-map.min.js"></script>
-    <script src="./js/main.js"></script>
-  </body>
+<body class="container">
+  <h1>Map Demo</h1>
+  <div id="vue-app">
+    <h2 id="map-title">{{ mapToLoad.title }}</h2>
+    <svg id="map-svg" width="750" height="500" style="border:1px solid black"></svg>
+      <div class="form-group">
+        <h3>Map Info</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <label for="map-name">Map Name</label>
+            <input name="map-name" type="text" v-model="mapToLoad.title">
+          </div>
+          <div class="col-md-6">
+            <label for="map-image-source">Image Source</label>
+            <input name="map-image-source" type="text" v-model="mapToLoad.imageSource">
+          </div>
+        </div>
+        <div>
+          <h3>Pins</h3>
+          <table class="table">
+            <thead>
+              <th scope="col">Name</th>
+              <th scope="col">Image Source</th>
+              <th scope="col">X</th>
+              <th scope="col">Y</th>
+              <th scope="col">Description</th>
+            </thead>
+            <tbody>
+              <tr is="activity" v-for="pin in mapToLoad.pins" v-bind:activity="pin"></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <button v-on:click="drawMap" class="btn btn-light">Draw Map</button>
+    <br/>
+    <br/>
+  </div>
+
+
+
+  <script src="./../dist/basic-custom-map.min.js"></script>
+  <script src="./lib/vue.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/vue-components.js"></script>
+</body>
+
 </html>

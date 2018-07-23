@@ -23,7 +23,7 @@ var exampleMapToLoad = {
   pins:[
       {
           name: 'Giddy Giraffe',
-          description: 'Come along for a great ride with our main G!',
+          description: 'Come along for a great ride with our G!',
           imageSource: 'img/animal-giraffe.png',
           position: {
             x: 180,
