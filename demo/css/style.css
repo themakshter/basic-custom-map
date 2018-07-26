@@ -5,3 +5,7 @@ body{
 label{
   font-weight: bold;
 }
+
+.number-input{
+  width: 60px;
+}
