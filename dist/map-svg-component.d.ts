@@ -15,4 +15,5 @@ export declare class MapSvgComponent implements SvgComponent {
     draw(): Promise<void>;
     drawMapPins(mapPins: Array<MapPin>): void;
     getScaledPosition(position: Position): Position;
+    getScaledDimensions(dimensions: RectangleDimensions): RectangleDimensions;
 }

@@ -26,10 +26,9 @@ export class MapSvgComponent implements SvgComponent {
 
   drawMapPins(mapPins: Array<MapPin>): void {
     for(let pin of mapPins){
-      let pinSize: number = this.dimensions.width * 0.075;
-      let pinDimensions: RectangleDimensions = {width: pinSize, height: pinSize};
       let scaledPinPositon = this.getScaledPosition(pin.position);
-      let mapPin = new MapPinSvgComponent(pin, this.snapCtx, scaledPinPositon, pinDimensions);
+      let scaledDimensions = this.getScaledDimensions(pin.dimensions);
+      let mapPin = new MapPinSvgComponent(pin, this.snapCtx, scaledPinPositon, scaledDimensions);
       mapPin.draw();
     }
   }
@@ -37,7 +36,13 @@ export class MapSvgComponent implements SvgComponent {
   getScaledPosition(position: Position): Position {
     let scaledX = position.x * this.xScale;
     let scaledY = position.y * this.yScale;
-    return { x: scaledX, y: scaledY};
+    return { x: scaledX, y: scaledY };
+  }
+
+  getScaledDimensions(dimensions: RectangleDimensions): RectangleDimensions {
+    let scaledWidth = dimensions.width * this.xScale;
+    let scaledHeight = dimensions.height * this.yScale;
+    return { width: scaledWidth, height: scaledHeight };
   }
 
 }
