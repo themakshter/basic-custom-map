@@ -11,17 +11,25 @@
   <h1>Map Demo</h1>
   <div id="vue-app">
     <h2 id="map-title">{{ mapToLoad.title }}</h2>
-    <svg id="map-svg" width="750" height="500" style="border:1px solid black"></svg>
+    <svg id="map-svg" v-bind:width="svgWidth" v-bind:height="svgHeight" style="border:1px solid black"></svg>
       <div class="form-group">
         <h3>Map Info</h3>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-3">
             <label for="map-name">Map Name</label>
             <input name="map-name" type="text" v-model="mapToLoad.title">
           </div>
-          <div class="col-md-6">
+          <div class="col-md-3">
             <label for="map-image-source">Image Source</label>
             <input name="map-image-source" type="text" v-model="mapToLoad.imageSource">
+          </div>
+          <div class="col-md-3">
+            <label for="map-name">Svg Width</label>
+            <input name="map-name" type="text" v-model="svgWidth">
+          </div>
+          <div class="col-md-3">
+            <label for="map-name">Svg Height</label>
+            <input name="map-name" type="text" v-model="svgHeight">
           </div>
         </div>
         <div>
