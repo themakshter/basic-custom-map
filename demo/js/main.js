@@ -20,6 +20,10 @@ var descriptionFunction = function(name){
 var exampleMapToLoad = {
   title: 'Fun Island',
   imageSource: 'img/map.png',
+  coordinateSpace: {
+    width: 750,
+    height: 500
+  },
   pins:[
       {
           name: 'Giddy Giraffe',

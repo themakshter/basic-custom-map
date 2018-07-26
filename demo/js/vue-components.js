@@ -24,7 +24,9 @@ Vue.component('activity', {
 var app = new Vue({
   el: '#vue-app',
   data: {
-    mapToLoad: exampleMapToLoad
+    mapToLoad: exampleMapToLoad,
+    svgWidth: 750,
+    svgHeight: 500
   },
   methods: {
     drawMap: function () {
