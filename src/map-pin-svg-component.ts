@@ -72,7 +72,7 @@ export class MapPinSvgComponent implements SvgComponent {
 
   addBehaviourToExecuteCallbackOnCircleClick(pinCircle: CircleSvgComponent): void {
     pinCircle.element.click(() => {
-      this.mapPin.callbackFunction(this.mapPin.name);
+      this.mapPin.callbackFunction(this.mapPin);
     });
   }
 }
