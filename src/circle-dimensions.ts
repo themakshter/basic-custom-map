@@ -1,5 +1,3 @@
-import { Dimensions } from "./dimensions";
-
-export interface CircleDimensions extends Dimensions {
-  radius: number
+export interface CircleDimensions {
+  radius: number;
 }

@@ -1,7 +1,7 @@
 /// <reference types="snapsvg" />
-import { SvgComponent } from "./svg-component";
-import { Position } from "./position";
-import { RectangleDimensions } from "./rectangle-dimensions";
+import { Position } from './position';
+import { RectangleDimensions } from './rectangle-dimensions';
+import { SvgComponent } from './svg-component';
 export declare class ImageSvgComponent implements SvgComponent {
     private imageSource;
     snapCtx: Snap.Paper;

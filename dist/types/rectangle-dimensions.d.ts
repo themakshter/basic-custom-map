@@ -1,5 +1,4 @@
-import { Dimensions } from "./dimensions";
-export interface RectangleDimensions extends Dimensions {
+export interface RectangleDimensions {
     width: number;
     height: number;
 }

@@ -1,11 +1,11 @@
 /// <reference types="snapsvg" />
-import { SvgComponent } from "./svg-component";
-import { Position } from "./position";
-import { RectangleDimensions } from "./rectangle-dimensions";
-import { CircleSvgComponent } from "./circle-svg-component";
-import { CircleDimensions } from "./circle-dimensions";
-import { MapPinCardSvgComponent } from "./map-pin-card-svg-component";
-import { MapPin } from "./map-pin";
+import { CircleDimensions } from './circle-dimensions';
+import { CircleSvgComponent } from './circle-svg-component';
+import { MapPin } from './map-pin';
+import { MapPinCardSvgComponent } from './map-pin-card-svg-component';
+import { Position } from './position';
+import { RectangleDimensions } from './rectangle-dimensions';
+import { SvgComponent } from './svg-component';
 export declare class MapPinSvgComponent implements SvgComponent {
     private mapPin;
     snapCtx: Snap.Paper;

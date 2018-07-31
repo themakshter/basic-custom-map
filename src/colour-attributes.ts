@@ -1,5 +1,5 @@
 export interface ColourAttributes {
-  fillColour: string,
-  strokeColour: string,
-  strokeSize: number
+  fillColour: string;
+  strokeColour: string;
+  strokeSize: number;
 }

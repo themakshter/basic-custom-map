@@ -1,0 +1,14 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+      // most major companies use single quotes
+      "quotemark": [true, "single"],
+      // Microsoft does not append an interface with 'I'
+      "interface-name": [true, "never-prefix"]
+    },
+    "rulesDirectory": []
+}
