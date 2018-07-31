@@ -2,19 +2,23 @@
 
 New contributions to the library are always welcome, but please follow these guidelines below
 
+## Installing 
+
+Please use `yarn` or `npm` to install all the package.
+
+## Compiling the library
+
+ You can run the `compile` script from `package.json` to generate the UMD versions of the library, bundle and the minified versions. Use the `build` script to run the linter as well as compiling the code afterwards.
+
 ## Code
 
 In general formatting, please follow the EditorConfig guidelines for the project. You should be only editing code `/src` folder.
 
-In terms of TypeScript, we use TSLint with the basic settings except two rule changes: `quotemark` is set to use `single-quotes` (`''`) and `interface-name` is set to `never-prefix` (i.e., we never prefix our interfaces with `I`). We have set up TSLint to check for code issues and calling `npm run build` should automatically run the linter. Otherwise, you can also run `npm run lint` to just run the linter.
-
-## Building
-
-Please run `npm run build` to generate the UMD versions of the library, bundle and the minified versions.
+In terms of TypeScript, we use TSLint with the basic settings except two rule changes: `quotemark` is set to use `single-quotes` (`''`) and `interface-name` is set to `never-prefix` (i.e., we never prefix our interfaces with `I`). We have set up TSLint to check for code issues and calling the `build` script should automatically run the linter. Otherwise, you can also run the `lint` script to just run the linter.
 
 ## Demo
 
-We provide a nice and interactive demo for the library. This can be run by calling `npm run demo` which will run the lint, compile the files and then run a simple `http-server` before routing to the index page.
+We provide a nice and interactive demo for the library. This can be run by calling the `demo` script which will run the lint, compile the files and then run a simple `http-server` before routing to the index page.
 
 ## Commit guidelines
 
