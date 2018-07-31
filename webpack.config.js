@@ -1,6 +1,26 @@
 const path = require('path');
 
-module.exports = {
+var distOutput = {
+  output: {
+    filename: 'basic-custom-map.min.js',
+    path: path.resolve(__dirname, 'dist'),
+    libraryTarget: 'umd',
+    library: 'basicCustomMap',
+    umdNamedDefine: true,
+  }
+}
+
+var demoOutput = {
+  output: {
+    filename: 'basic-custom-map.min.js',
+    path: path.resolve(__dirname, 'demo/lib/'),
+    libraryTarget: 'umd',
+    library: 'basicCustomMap',
+    umdNamedDefine: true,
+  }
+}
+
+var basicConfig = {
   entry: './src/index.ts',
   module: {
     rules: [
@@ -22,12 +42,15 @@ module.exports = {
     }
   },
   devtool: 'source-map',
-  output: {
-    filename: 'basic-custom-map.min.js',
-    path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'umd',
-    library: 'basicCustomMap',
-    umdNamedDefine: true,
-  },
   mode: 'production'
 };
+
+var distConfig = Object.assign(basicConfig, distOutput);
+var demoConfig = Object.assign(basicConfig, demoOutput);
+
+console.log()
+
+
+module.exports = [
+  distConfig, demoConfig
+];
