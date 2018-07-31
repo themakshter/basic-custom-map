@@ -2,7 +2,8 @@
   "name": "@pcs4kids/basic-custom-map",
   "version": "1.0.0",
   "description": "Library to render basic custom maps",
-  "main": "src/index.js",
+  "main": "dist/basic-custom-map.min.js",
+  "types":"dist/types/index.d.ts",
   "scripts": {
     "lint": "tslint -c tslint.json 'src/**/*.ts",
     "compile": "webpack",
