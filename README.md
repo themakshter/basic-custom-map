@@ -1,5 +1,7 @@
 # basic-custom-map
 
+[![npm (scoped)](https://img.shields.io/npm/v/@pcs4kids/basic-custom-map.svg)](https://www.npmjs.com/package/@pcs4kids/basic-custom-map)
+
 Library using Snap.svg to render basic custom maps with interactive pins on them.
 
 ## Features
