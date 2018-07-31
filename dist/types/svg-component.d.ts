@@ -1,9 +1,10 @@
 /// <reference types="snapsvg" />
-import { Position } from "./position";
-import { Dimensions } from "./dimensions";
+import { CircleDimensions } from './circle-dimensions';
+import { Position } from './position';
+import { RectangleDimensions } from './rectangle-dimensions';
 export interface SvgComponent {
     snapCtx: Snap.Paper;
     position: Position;
-    dimensions: Dimensions;
+    dimensions: RectangleDimensions | CircleDimensions;
     draw(): Promise<void>;
 }

@@ -4,7 +4,9 @@
   "description": "Library to render basic custom maps",
   "main": "src/index.js",
   "scripts": {
-    "build": "webpack",
+    "lint": "tslint -c tslint.json 'src/**/*.ts",
+    "compile": "webpack",
+    "build": "npm run lint && npm run compile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +24,7 @@
     "@types/snapsvg": "0.4.32",
     "imports-loader": "0.8.0",
     "ts-loader": "4.4.2",
+    "tslint": "5.11.0",
     "typescript": "2.7.2",
     "webpack": "4.6.0",
     "webpack-cli": "2.0.15"
